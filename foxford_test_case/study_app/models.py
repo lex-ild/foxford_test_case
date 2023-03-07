@@ -4,7 +4,7 @@ from django.db.models import TextChoices
 
 class Teacher(models.Model):
     name = models.CharField(max_length=255)
-    hourly_rate = models.IntegerField()
+    hourly_rate = models.DecimalField(max_digits=6, decimal_places=2)
 
 
 class Course(models.Model):
@@ -25,7 +25,7 @@ class Webinar(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     status = models.CharField(max_length=10, choices=StatusChoices.choices)
-    teachers = models.ManyToManyField(Teacher)
+    teachers = models.ManyToManyField(Teacher, related_name='webinars')
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     hours = models.FloatField(null=True, blank=True)
 
