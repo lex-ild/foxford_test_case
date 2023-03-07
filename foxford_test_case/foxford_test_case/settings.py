@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 
 from celery.schedules import crontab
@@ -143,11 +144,10 @@ CELERY_BROKER_URL = 'redis://redis:6379/0'
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
-# в тесте запускаем каждую минуту, чтобы было проще отслеживать
 CELERY_BEAT_SCHEDULE = {
     "teacher_salary_calculation": {
         "task": "study_app.tasks.teacher_salary_calculation",
-        "schedule": crontab(minute="*/1"),
+        "schedule": timedelta(seconds=10),
     },
 }
 
