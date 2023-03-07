@@ -19,13 +19,19 @@ def teacher_salary_calculation(*args):
         ).aggregate(
             total_hours=Sum('hours', output_field=DecimalField())
         )
-        salary_amount = completed_webinars['total_hours'] * teacher.hourly_rate
+        # проверяем, что за нужный период есть хоть один завершённый вебинар
+        if completed_webinars['total_hours']:
+            salary_amount = completed_webinars['total_hours'] * teacher.hourly_rate
 
-        # сохраняем итоговый результат в инстанс Salary, чтобы потом отдавать в эндпоинте с зарплатами
-        salary, _ = Salary.objects.get_or_create(teacher=teacher)
-        salary.salary = salary_amount
-        salary.hours = completed_webinars['total_hours']
-        salary.save()
+            # сохраняем итоговый результат в инстанс Salary, чтобы потом отдавать в эндпоинте с зарплатами
+            salary, _ = Salary.objects.get_or_create(teacher=teacher)
+            salary.salary = salary_amount
+            salary.hours = completed_webinars['total_hours']
+            salary.save()
+        else:
+            pass
+
+
 
 
 
