@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from django.db.models import Sum
+from django.db.models import Sum, FloatField, F
 
 from foxford_test_case.celery import app
 from .models import Teacher, Webinar, Salary
@@ -18,7 +18,7 @@ def teacher_salary_calculation(*args):
             teachers=teacher,
             start_date__gte=datetime.today().replace(day=1)
         ).aggregate(
-            webinars_salary=Sum('teachers__hourly_rate') * Sum('hours'),
+            webinars_salary=teacher.hourly_rate * Sum('hours'),
             hours=Sum('hours'),
         )
 
