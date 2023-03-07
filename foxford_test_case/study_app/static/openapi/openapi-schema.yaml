@@ -1,0 +1,547 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /teachers/:
+    get:
+      operationId: listTeachers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Teacher'
+          description: ''
+      tags:
+      - teachers
+    post:
+      operationId: createTeacher
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+      tags:
+      - teachers
+  /teachers/{id}/:
+    get:
+      operationId: retrieveTeacher
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this teacher.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+      tags:
+      - teachers
+    put:
+      operationId: updateTeacher
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this teacher.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+      tags:
+      - teachers
+    patch:
+      operationId: partialUpdateTeacher
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this teacher.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Teacher'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teacher'
+          description: ''
+      tags:
+      - teachers
+    delete:
+      operationId: destroyTeacher
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this teacher.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - teachers
+  /courses/:
+    get:
+      operationId: listCourses
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - courses
+    post:
+      operationId: createCourse
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Course'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - courses
+  /courses/{id}/:
+    get:
+      operationId: retrieveCourse
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this course.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - courses
+    put:
+      operationId: updateCourse
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this course.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Course'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - courses
+    patch:
+      operationId: partialUpdateCourse
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this course.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Course'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+          description: ''
+      tags:
+      - courses
+    delete:
+      operationId: destroyCourse
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this course.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - courses
+  /webinars/:
+    get:
+      operationId: listWebinars
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Webinar'
+          description: ''
+      tags:
+      - webinars
+    post:
+      operationId: createWebinar
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webinar'
+          description: ''
+      tags:
+      - webinars
+  /webinars/{id}/:
+    get:
+      operationId: retrieveWebinar
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this webinar.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webinar'
+          description: ''
+      tags:
+      - webinars
+    put:
+      operationId: updateWebinar
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this webinar.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webinar'
+          description: ''
+      tags:
+      - webinars
+    patch:
+      operationId: partialUpdateWebinar
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this webinar.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Webinar'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webinar'
+          description: ''
+      tags:
+      - webinars
+    delete:
+      operationId: destroyWebinar
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this webinar.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - webinars
+  /salaries/:
+    get:
+      operationId: listSalarys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Salary'
+          description: ''
+      tags:
+      - salaries
+  /salaries/{id}/:
+    get:
+      operationId: retrieveSalary
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this salary.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Salary'
+          description: ''
+      tags:
+      - salaries
+components:
+  schemas:
+    Teacher:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        hourly_rate:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - name
+      - hourly_rate
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        teacher:
+          type: integer
+      required:
+      - name
+      - description
+      - teacher
+    Webinar:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        end_date:
+          type: string
+          format: date-time
+        status:
+          enum:
+          - Created
+          - Live
+          - Finished
+          - Cancelled
+          type: string
+        course:
+          type: integer
+        teachers:
+          type: array
+          items:
+            type: integer
+      required:
+      - name
+      - description
+      - start_date
+      - end_date
+      - status
+      - course
+      - teachers
+    Salary:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        hours:
+          type: string
+          format: decimal
+          multipleOf: 0.01
+          maximum: 10000
+          minimum: -10000
+          nullable: true
+        salary:
+          type: string
+          format: decimal
+          multipleOf: 0.01
+          maximum: 1000000
+          minimum: -1000000
+          nullable: true
+        date:
+          type: string
+          format: date-time
+          readOnly: true
+        teacher:
+          type: integer
+      required:
+      - teacher
